@@ -49,7 +49,7 @@ inputs:
   ksu-version:
     description: 'KernelSU default branch'
     required: false
-    default: "main"
+    default: "next"
   ksu-other:
     required: false
     default: false
@@ -84,11 +84,11 @@ inputs:
   kvm:
     description: 'Enable KVM for configs.'
     required: false
-    default: false
+    default: true
   ccache:
     description: 'Enable Ccache for compiling kernel'
     required: false
-    default: false
+    default: true
   aosp-gcc:
     description: 'Use gcc from aosp project.'
     required: false
@@ -121,7 +121,7 @@ inputs:
   anykernel3:
     description: 'Package kernel use anykernel3.'
     required: false
-    default: false
+    default: true
   anykernel3-url:
     description: '3rdparty anykernrl3 url path'
     required: false
@@ -322,7 +322,7 @@ runs:
                     else
                         export KVER=${{ inputs.ksu-version }}
                     fi
-                        curl -LSs "https://raw.githubusercontent.com/tiann/KernelSU/main/kernel/setup.sh" | bash -s "$KVER"
+                        curl -LSs "https://raw.githubusercontent.com/Samo141988/KernelSU-Next/next/kernel/setup.sh" | bash -s next
                     fi
                 fi
                 if [ ${{ inputs.ksu-lkm }} = true ]; then
@@ -470,7 +470,7 @@ runs:
             if [ ! -z ${{ inputs.anykernel3-url }} ]; then
                 git clone ${{ inputs.anykernel3-url }} AnyKernel3
             else
-                git clone https://github.com/osm0sis/AnyKernel3
+                git clone https://github.com/Samo141988/AnyKernel3
                 sed -i 's!BLOCK=/dev/block/platform/omap/omap_hsmmc.0/by-name/boot;!BLOCK=auto;!g' AnyKernel3/anykernel.sh
                 sed -i 's/do.devicecheck=1/do.devicecheck=0/g' AnyKernel3/anykernel.sh
                 sed -i 's/IS_SLOT_DEVICE=0;/IS_SLOT_DEVICE=auto;/g' AnyKernel3/anykernel.sh
