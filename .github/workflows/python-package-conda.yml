@@ -13,18 +13,16 @@ jobs:
 
     steps:
     - name: Build Kernel
-      uses: Samo141988/android_kernel_samsung_m32@13
+      uses: Samo141988/android_kernel_samsung_m32@Thirteen-Ksu-Next
       with:
           kernel-url: https://github.com/Samo141988/android_kernel_samsung_m32
-          kernel-dir: $(pwd)
-          kernel-branch: 13
+          kernel-branch: Thirteen-Ksu-Next
           config: rsuntk_defconfig
           arch: arm64
           aosp-gcc: true
           aosp-clang: true
           ksu: true
           ksu-version: main
-          android-version: 12
+          android-version: 13
           aosp-clang-version: r383902
-          disable-lto: true
           anykernel3: true
