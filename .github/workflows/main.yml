@@ -36,7 +36,7 @@ jobs:
           aosp-clang: false
           ksu: true
           ksu-version: next
-          android-version: 13
+          android-version: 12
           
           
           anykernel3: true
