@@ -35,7 +35,7 @@ jobs:
           aosp-gcc: true
           aosp-clang: true
           ksu: true
-          ksu-version: main
+          ksu-version: next
           android-version: 13
           aosp-clang-version: r383902
           
