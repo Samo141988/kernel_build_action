@@ -13,7 +13,7 @@ jobs:
     name: Build Kernel
     strategy:
       fail-fast: false
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-latest
     permissions:
       contents: write
 
@@ -33,7 +33,7 @@ jobs:
           config: rsuntk_defconfig
           arch: arm64
           aosp-gcc: true
-          aosp-clang: false
+          aosp-clang: true
           ksu: true
           ksu-version: next
           android-version: 12
